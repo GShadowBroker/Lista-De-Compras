@@ -8,6 +8,9 @@
         <div class="inside-container-login">
             <h1>Informe o seu login:</h1>
             <br>
+            {% if form.errors %}
+                <p class="has-text-danger">Nome de usuário ou senha incorretos</p>
+            {% endif %}
             {% csrf_token %}
             <table>
                 <tr>
