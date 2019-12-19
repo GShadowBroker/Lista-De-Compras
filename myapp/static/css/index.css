@@ -1,0 +1,233 @@
+html {
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  background-image: url(../imagens/brooke-cagle-TiTU0k1E0UE-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  height: 100%;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+  max-width: 480px;
+  height: 100%;
+  margin: auto;
+}
+
+#root .field {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  margin-left: -150px;
+  width: 400px;
+}
+
+#root label {
+  position: absolute;
+  bottom: 0;
+  visibility: hidden;
+}
+
+#root table {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#root table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#root table td {
+  text-align: left;
+  vertical-align: middle;
+}
+
+#root table tr {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#root table tr:hover {
+  background-color: rgba(86, 221, 86, 0.5);
+}
+
+#root .items-list {
+  padding-top: 100px;
+}
+
+#root .items-list .items-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px 30px 0px 30px;
+  font-size: 1.5em;
+  color: #fcfcfc;
+  text-shadow: 1px 1px 5px black;
+}
+
+#root .form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: first baseline;
+      -ms-flex-pack: first baseline;
+          justify-content: first baseline;
+  width: 100%;
+}
+
+#root .form-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px 30px 0px 30px;
+  font-size: 1.5em;
+  color: #fcfcfc;
+  text-shadow: 1px 1px 4px black;
+}
+
+#root #no-delete {
+  margin-top: 100px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#root .editar, #root .excluir {
+  padding: 5px;
+}
+
+#root .editar a {
+  color: #5f5ff7;
+}
+
+#root .editar a:hover {
+  color: blue;
+}
+
+#root .excluir a {
+  color: #f54747;
+}
+
+#root .excluir a:hover {
+  color: red;
+}
+
+#root .login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  height: 100%;
+}
+
+#root .login-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 6px black;
+          box-shadow: 2px 2px 6px black;
+  padding: 8px;
+  background-color: #5d5dec;
+}
+
+#root .login-container form .inside-container-login {
+  border: 0.5px solid #c4c1c1;
+  border-radius: 5px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+}
+
+#root .login-container form .inside-container-login h1 {
+  font-size: 1.4em;
+  color: blue;
+  text-shadow: none;
+}
+
+#root .login-container form .inside-container-login table {
+  border-collapse: separate;
+  border-spacing: 0 1em;
+}
+
+#root h1 {
+  color: white;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 5px black;
+}
+
+#root h1 a {
+  color: #f54747;
+}
+
+#root h1 a:hover {
+  color: red;
+}
+/*# sourceMappingURL=index.css.map */

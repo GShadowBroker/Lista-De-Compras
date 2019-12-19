@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="login-container">
+    <form action="{% url 'login' %}" method="POST">
+        <div class="inside-container-login">
+            <h1>Informe o seu login:</h1>
+            <br>
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <div class="field">
+                        <td><label for="id_username">Nome</label></td>
+                        <div class="control has-icons-left">
+                            <td>{% render_field form.username class="input" id="id_username" placeholder='Nome de usuário' %}</td>
+                        </div>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="field">
+                        <td><label for="id_password">Senha</label></td>
+                        <div class="control has-icons-left">
+                            <td>{% render_field form.password class="input" id="id_password" placeholder='Senha de usuário' %}</td>
+                        </div>
+                    </div>
+                </tr>
+            </table>
+            <br>
+            <input class="button is-fullwidth is-info" type="submit" value="Entrar">
+            <input type="hidden" name="next" id="{{ next }}">
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/9ef8375e57.js" crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <title>Lista de Compras | {{ user.get_username }}</title>
+</head>
+<body>
+    <div id="root">
+    {% block content %}
+        <h1 class="welcome-title">Bem-vindo(a) de volta {{ user.get_username }}!
+            <a href="{% url 'logout' %}?next={% url 'login' %}" class="logout-icon" onclick="areYouSure(event)">
+                <i class="fas fa-power-off"></i>
+            </a href="{% url 'logout' %}?next={% url 'login' %}">
+        </h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field has-addons">
+                <div class="control">
+                    {{ form }}
+                </div>
+                <div class="control">
+                    <input class="button is-info" type="submit" :disabled="isDisabled" value="Adicionar">
+                </div>
+            </div>
+        </form>
+        <div class="items-list">
+            <div class="items-title">
+                {% if count %}
+                <h1>Há {{ count }} {% if count == 1 %}item{% else %}itens{% endif %} na lista de compras!</h1>
+                {% else %}
+                <h1>A lista de compras está vazia.</h1>
+                {% endif %}
+            </div>
+
+            {% if items %}
+            <table class="table is-fullwidth is-hoverable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Item</th>
+                        <th>Adicionado Em</th>
+                        <th>Por</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>
+                            <div class="editar">
+                                <a href="{% url 'editar' item.pk %}"><i class="fas fa-pencil-alt"></i></a>
+                            </div>
+                            <div class="excluir">
+                                <a href="{% url 'excluir' item.pk %}"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                        </td>
+
+                        <td><strong>{{ item.nome }}</strong></td>
+                        <td>{{ item.created }}</td>
+                        <td>{{ item.autor }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+    {% endblock %}
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="{% static 'javascript/vue_index.js' %}"></script>
+    
+</body>
+</html>

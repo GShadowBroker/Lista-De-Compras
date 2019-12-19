@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="form-container">
+        <div class="form-title">
+            <h3>Deseja mesmo deletar o item <span class="has-text-warning">'{{ item }}'</span>?</h3>
+        </div>
+
+        <form method='POST'>
+            {% csrf_token %}
+            <br>
+            <input class="button is-danger is-fullwidth" type="submit" value="Sim, deletar {{ item }}">
+            <br>
+            <a class="button is-info is-fullwidth" href="{% url 'index' %}">Não, voltar</a>
+        </form>
+        
+    </div>
+{% endblock %}
